@@ -29,7 +29,7 @@ public class PseudoRandom {
     modulus = newModulus;
   }
 
-  // using the formula provided a pseudo random number is generated
+  // using the formula provided: a pseudo random number is generated
   // the instace variable seed is updated to the resul and the result
   // is returned.
   public int generateNextNum() {

@@ -133,45 +133,48 @@ public class Employee implements Cloneable {
 
   public static void main(String[] args) throws CloneNotSupportedException {
     // test for defaul contructur and setter methods.
-    Employee firstguy = new Employee();
-    firstguy.setAge(12);
-    firstguy.setName("jeff");
-    firstguy.setAdvisor("steve");
-    firstguy.setID(123143212);
-    firstguy.setState("NM");
-    firstguy.setZipCode(88234);
+    Employee Orignial = new Employee();
+    Orignial.setAge(12);
+    Orignial.setName("jeff");
+    Orignial.setAdvisor("steve");
+    Orignial.setID(1497);
+    Orignial.setState("NM");
+    Orignial.setZipCode(88234);
+
     // test the toString method
-    System.out.println(firstguy.toString());
+    System.out.println(Orignial.toString());
     // test the copy constructor
-    Employee copy = new Employee(firstguy);
+    Employee copy = new Employee(Orignial);
     copy.setAdvisor("stevenson");
     // ensure there are two different objects by changin an instace varialbe in the
     // copy
     // and comparing it to the origial
     System.out.println(copy.toString());
-    System.out.println(firstguy.toString());
+    System.out.println(Orignial.toString());
+
     // test clone method
-    Employee cloned = firstguy.clone();
+    Employee cloned = Orignial.clone();
     // ensure two different objects exist by changing instace variabel in the clone
     // and comapring it to the origial
     cloned.setAdvisor("Doom guy");
     System.out.println(cloned.toString());
-    System.out.println(firstguy.toString());
-    // test of the equals method
+    System.out.println(Orignial.toString());
+    // test of the equals method // first test should return true
     System.out.println(copy.equals(cloned));
     cloned.setID(24);
+    // afther change the output should be false
     System.out.println(copy.equals(cloned));
-    // test chaning original object to see if clones are affected
-    firstguy.setName("he who remains");
+    // test changing original object to see if clones are affected
+    Orignial.setName("he who remains");
     System.out.println(cloned.toString());
     System.out.println(copy.toString());
 
-    System.out.println(firstguy.toString());
+    System.out.println(Orignial.toString());
     // test for cases in wich strings are null
-    Employee breaker = new Employee();
-    Employee clonedestroy = breaker.clone();
-    System.out.println(clonedestroy.toString());
-    Employee copybreaker = new Employee(breaker);
-    System.out.println(copybreaker.toString());
+    Employee Empty = new Employee();
+    Employee cloneEmpty = Empty.clone();
+    System.out.println(cloneEmpty.toString());
+    Employee copyEmpty = new Employee(Empty);
+    System.out.println(copyEmpty.toString());
   }
 }// end of class
